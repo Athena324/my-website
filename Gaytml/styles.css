@@ -1,0 +1,318 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', bold;
+  margin: 0;
+  padding: 0;
+  color: #eee;
+  line-height: 1.6;
+  background-color: #121212; /* Darker neutral background */
+}
+
+/* Neon Color Scheme */
+:root {
+  --neon-blue: #00e0ff; /* Electric cyan */
+  --neon-pink: #ff2079; /* Bright neon pink/red */
+  --neon-yellow: #ffcc00; /* Warm neon yellow */
+  --dark-bg: #121212; /* Sleek dark background */
+  --light-text: #f9f9f9; /* Slightly soft white text */
+}
+
+/* Header */
+header {
+  background: var(--dark-bg);
+  color: var(--light-text);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--neon-pink); /* Neon pink/red */
+}
+.logo-img {
+  width: 100px; /* Adjust this value to make the logo smaller */
+  height: auto; /* Maintains the aspect ratio */
+  margin-right: 10px; /* Space between logo and text */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--neon-blue);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Hide overflow for the gallery */
+}
+
+/* Dark overlay for the entire hero section */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+  z-index: 1; /* Place the overlay above the gallery */
+}
+
+.gallery-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Place the gallery behind the overlay */
+  overflow: hidden;
+}
+
+.gallery {
+  display: flex;
+  width: 500%; /* Adjust based on the number of images */
+  height: 100%;
+  animation: scrollGallery 20s linear infinite; /* Animation for scrolling */
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure images cover the area */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Place the content above the overlay */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: var(--neon-green); /* Neon green for the heading */
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background: var(--neon-blue); /* Neon blue for buttons */
+  color: var(--dark-bg);
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--neon-green); /* Neon green on hover */
+  transform: translateY(-3px);
+}
+
+/* Keyframes for scrolling animation */
+@keyframes scrollGallery {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-80%); /* Adjust based on the number of images */
+  }
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--neon-blue);
+}
+
+/* Menu Categories */
+.menu-categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.menu-category-btn {
+  background: var(--neon-blue);
+  color: var(--dark-bg);
+  padding: 50px 90px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-size: 1.2rem;
+}
+.menu-category-btn:hover {
+  background: var(--neon-pink);
+  transform: translateY(-3px);
+}
+
+/* Menu Image Section */
+.menu-image {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.menu-image h2 {
+  font-size: 2.5rem;
+  color: var(--neon-yellow);
+  margin-bottom: 20px;
+}
+
+.menu-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Events Section */
+.event-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.event {
+  background: #303030; /* Grey background for the box */
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 30%;
+  text-align: center;
+  height: 750px; /* Fixed height for the event box */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out content evenly */
+}
+
+.event:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: var(--neon-blue); /* Neon blue for headings */
+}
+
+.event p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.event img {
+  width: 100%; /* Make the image fill the container */
+  height: 500px; /* Fixed height for the image */
+  object-fit: cover; /* Ensure the image covers the area */
+  border-radius: 10px; /* Rounded corners for the image */
+}
+/* Rental Packages */
+.rental-info {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.rental-package {
+  background: #1f1f1f;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rental-package:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.rental-package h3 {
+  font-size: 1.5rem;
+  color: var(--neon-pink);
+  margin-bottom: 10px;
+}
+
+.rental-package ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.rental-package ul li {
+  margin-bottom: 5px;
+  color: #bbb;
+}
+
+.rental-package .price {
+  font-weight: bold;
+  color: var(--neon-yellow);
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  background: var(--dark-bg);
+  color: var(--light-text);
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 60px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
